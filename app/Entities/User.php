@@ -24,6 +24,7 @@ class User extends Authenticatable implements Transformable
         'name',
         'email',
         'password',
+        'contaInsta_id',
     ];
 
     /**
