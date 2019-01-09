@@ -28,4 +28,12 @@ class InstaConta extends Model implements Transformable
     protected $hidden = [
         'password'
     ];
+
+
+
+
+    public function user()
+    {
+        return $this->belongsTo('App\Entities\User');
+    }
 }

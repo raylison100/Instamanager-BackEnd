@@ -36,4 +36,9 @@ class User extends Authenticatable implements Transformable
         'remember_token',
     ];
 
+    public function instaConta()
+    {
+        return $this->hasOne('App\Entities\InstaConta');
+    }
+
 }
