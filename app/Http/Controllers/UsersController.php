@@ -11,6 +11,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Traits\CrudMethods;
 use App\Services\UserService;
 use App\Validators\UserValidator;
+use Illuminate\Http\Request;
+use Prettus\Validator\Contracts\ValidatorInterface;
+use Prettus\Validator\Exceptions\ValidatorException;
 
 /**
  * Class UsersController.

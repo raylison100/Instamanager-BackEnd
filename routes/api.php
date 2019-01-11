@@ -16,5 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('cadastra','UsersController@store');
+Route::put('atualizarUser/{id}','UsersController@update');
+Route::post('cadastraInsta','InstaContasController@store');
 
-Route::get('teste','UsersController@index');
+Route::get('testar','UsersController@index');

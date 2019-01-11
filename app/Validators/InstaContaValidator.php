@@ -19,11 +19,12 @@ class InstaContaValidator extends LaravelValidator
      */
     protected $rules = [
         ValidatorInterface::RULE_CREATE => [
-            'name'      => 'required|max:30',
+            'name'      => 'required|unique:insta_contas,name|max:30',
             'password'  => 'required|max:30'
         ],
         ValidatorInterface::RULE_UPDATE => [
-            'name'          => 'nullable',
+
+            'name'          => 'nullable|unique:insta_contas,name',
             'password'      => 'nullable',
             'created_at'    => 'required|date_format:Y-m-d H:i:s',
             'updated_at'    => 'required|date_format:Y-m-d H:i:s',

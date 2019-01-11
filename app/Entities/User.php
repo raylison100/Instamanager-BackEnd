@@ -37,6 +37,11 @@ class User extends Authenticatable implements Transformable
         'remember_token',
     ];
 
+    protected $dates = [
+        'created_at',
+        'updated_at'
+    ];
+
     public function instaConta()
     {
         return $this->hasOne('App\Entities\InstaConta');

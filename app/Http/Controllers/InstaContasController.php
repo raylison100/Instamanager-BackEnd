@@ -36,4 +36,8 @@ class InstaContasController extends Controller
         $this->service = $service;
         $this->validator  = $validator;
     }
+
+    public function logarInsta(){
+
+    }
 }
