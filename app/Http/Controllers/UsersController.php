@@ -45,4 +45,9 @@ class UsersController extends Controller
         $this->service = $service;
         $this->validator  = $validator;
     }
+
+    public function login(Request $request)
+    {
+       return response(date('Redirect pag de login'));
+    }
 }

@@ -22,7 +22,13 @@ class InstaConta extends Model implements Transformable
      */
     protected $fillable = [
         'name',
-        'password'
+        'password',
+        'apiKey',
+        'apiSecret',
+        'apiCallback',
+        'curtidasQTD',
+        'seguidoresQTD',
+        'comentariosQTD'
     ];
 
     protected $hidden = [

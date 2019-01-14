@@ -13,11 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::post('cadastra','UsersController@store');
-Route::put('atualizarUser/{id}','UsersController@update');
-Route::post('cadastraInsta','InstaContasController@store');
+Route::post('login','UsersController@login');
 
-Route::get('testar','UsersController@index');
+
+Route::group(['middleware' => ['auth:api']],function (){
+
+    Route::get('lista','UsersController@index');
+    Route::post('cadastra','UsersController@store');
+    Route::put('atualizarUser/{id}','UsersController@update');
+
+    Route::get('listaInsta','InstaContasController@index');
+    Route::post('cadastraInsta','InstaContasController@store');
+    Route::put('updateInsta/{id}','InstaContasController@update');
+
+
+    Route::get('callback/{code}','InstaContasController@callback');
+    Route::get('login','InstaContasController@loginInsta');
+});

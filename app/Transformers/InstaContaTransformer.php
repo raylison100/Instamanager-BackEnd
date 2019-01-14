@@ -22,11 +22,17 @@ class InstaContaTransformer extends TransformerAbstract
     public function transform(InstaConta $model)
     {
         return [
-            'id'         => (int) $model->id,
-            'name'       => $model->name,
-            'password'   => $model->password,
-            'created_at' => $model->created_at->toDateTimeString(),
-            'updated_at' => $model->updated_at->toDateTimeString()
+            'id'                => (int) $model->id,
+            'name'              => $model->name,
+            'password'          => $model->password,
+            'apiKey'            => $model->apiKey,
+            'apiSecret'         => $model->apiSecret,
+            'apiCallback'       => $model->apiCallback,
+            'curtidasQTD'       => $model->curtidasQTD,
+            'seguidoresQTD'     => $model->seguidoresQTD,
+            'comentariosQTD'    => $model->comentarioQTD,
+            'created_at'        => $model->created_at->toDateTimeString(),
+            'updated_at'        => $model->updated_at->toDateTimeString()
         ];
     }
 }

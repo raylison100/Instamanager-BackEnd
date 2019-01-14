@@ -19,16 +19,24 @@ class InstaContaValidator extends LaravelValidator
      */
     protected $rules = [
         ValidatorInterface::RULE_CREATE => [
-            'name'      => 'required|unique:insta_contas,name|max:30',
-            'password'  => 'required|max:30'
+            'name'              => 'required|unique:insta_contas,name|max:30',
+            'password'          => 'required|max:30',
+            'apiKey'            => 'nullable|string',
+            'apiSecret'         => 'nullable|string',
+            'apiCallback'       => 'nullable|string',
+            'curtidasQTD'       => 'nullable|integer',
+            'seguidoresQTD'     => 'nullable|integer',
+            'comentariosQTD'    => 'nullable|integer'
         ],
         ValidatorInterface::RULE_UPDATE => [
-
-            'name'          => 'nullable|unique:insta_contas,name',
-            'password'      => 'nullable',
-            'created_at'    => 'required|date_format:Y-m-d H:i:s',
-            'updated_at'    => 'required|date_format:Y-m-d H:i:s',
-            'deleted_at'    => 'nullable|date_format:Y-m-d H:i:s',
+            'name'              => 'nullable|unique:insta_contas,name',
+            'password'          => 'nullable',
+            'apiKey'            => 'nullable|string',
+            'apiSecret'         => 'nullable|string',
+            'apiCallback'       => 'nullable|string',
+            'curtidasQTD'       => 'nullable|integer',
+            'seguidoresQTD'     => 'nullable|integer',
+            'comentariosQTD'    => 'nullable|integer',
         ],
     ];
 }
