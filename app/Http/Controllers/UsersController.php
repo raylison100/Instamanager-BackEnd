@@ -55,8 +55,9 @@ class UsersController extends Controller
         }
     }
 
-    public function login($username, $password){
+    public function login(Request $request){
 
+        return $this->service->login($request->all());
     }
 
 

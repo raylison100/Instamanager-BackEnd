@@ -11,6 +11,7 @@ namespace App\Services;
 use App\Repositories\UserRepository;
 use App\Services\Traits\CrudMethods;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserService
@@ -48,24 +49,16 @@ class UserService
     }
 
 
-    /**
-     * return error response.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function sendError($error, $errorMessages = [], $code = 404)
+    public function login($request)
     {
-        $response = [
-            'success' => false,
-            'message' => $error,
-        ];
+        $input = $request;
+        $user = array_get($this->repository->skipPresenter()->findByField('email',$input['username']),'0');;
 
-
-        if (!empty($errorMessages)) {
-            $response['data'] = $errorMessages;
+        if(Hash::check($input['password'], $user->password)) {
+            $this->redirect("oauth/token");
         }
 
-
-        return response()->json($response, $code);
+        return null;
     }
+
 }

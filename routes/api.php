@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Http\Request;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -11,32 +12,30 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('store', 'UsersController@store');
 
+//Route::post('login','UsersController@login');
 
 Route::group([
-    'prefix' => 'auth'
 ], function () {
-    Route::post('login','AuthController@login');
-    Route::post('signup', 'AuthController@signup');
+    Route::post('login','UsersController@login');
+    Route::post('signup', 'UsersController@store');
+    Route::get('callback/{code}','InstaContasController@callback');
 
     Route::group([
         'middleware' => 'auth:api'
     ], function() {
 
-        Route::get('logout','AuthController@logout')->name('logout');
+        Route::get('logout','UsersController@logout')->name('logout');
 
         Route::get('lista','UsersController@index');
-        Route::post('cadastra','UsersController@store');
         Route::put('atualizarUser/{id}','UsersController@update');
 
+        Route::get('exibir','InstaContasController@show');
         Route::get('listaInsta','InstaContasController@index');
         Route::post('cadastraInsta','InstaContasController@store');
         Route::put('updateInsta/{id}','InstaContasController@update');
 
-
-        Route::get('callback/{code}','InstaContasController@callback');
-        Route::get('login','InstaContasController@loginInsta');
+        Route::get('loginInsta','InstaContasController@loginInsta');
     });
 });
 
