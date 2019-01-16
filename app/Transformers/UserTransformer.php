@@ -9,7 +9,7 @@
 namespace App\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use App\Entities\User;
+use App\User;
 
 /**
  * Class UserTransformer.
@@ -21,7 +21,7 @@ class UserTransformer extends TransformerAbstract
     /**
      * Transform the InstaConta entity.
      *
-     * @param \App\Entities\User $model
+     * @param \App\User $model
      *
      * @return array
      */

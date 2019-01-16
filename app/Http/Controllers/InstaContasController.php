@@ -22,12 +22,14 @@ class InstaContasController extends Controller
      * @var InstaContaService
      */
     protected $service;
-    protected $instagram;
 
     /**
      * @var InstaContaValidator
      */
     protected $validator;
+
+
+    protected $instagram;
 
     /**
      * InstaContasController constructor.

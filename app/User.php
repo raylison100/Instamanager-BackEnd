@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Entities;
+namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
-use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 
 
 
-class User extends Authenticatable implements Transformable
+class User extends Authenticatable
 {
-    use TransformableTrait,HasApiTokens, Notifiable;
+    use HasApiTokens, Notifiable,TransformableTrait;
+
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.

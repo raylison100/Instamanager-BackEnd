@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Traits;
 
 use Illuminate\Http\Request;
 use Prettus\Validator\Contracts\ValidatorInterface;
-use Prettus\Validator\Exceptions\ValidatorException;
 use App\Services\AppService;
 
 /**
@@ -44,6 +43,7 @@ trait CrudMethods
         if($this->validator){
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
         }
+
         return $this->service->create($request->all());
     }
 

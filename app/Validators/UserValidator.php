@@ -2,7 +2,6 @@
 
 namespace App\Validators;
 
-use Illuminate\Http\Request;
 use \Prettus\Validator\Contracts\ValidatorInterface;
 use \Prettus\Validator\LaravelValidator;
 
@@ -21,9 +20,9 @@ class UserValidator extends LaravelValidator
 
     protected $rules = [
         ValidatorInterface::RULE_CREATE => [
-            'name'          => 'required|max:30',
-            'email'         => 'required|unique:users,email|email',
-            'password'      => 'required|max:30',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
             'contaInsta_id' => 'nullable|unique:insta_contas,id',
         ],
         ValidatorInterface::RULE_UPDATE => [
