@@ -7,12 +7,8 @@
  */
 namespace App\Services;
 
-
 use App\Repositories\UserRepository;
 use App\Services\Traits\CrudMethods;
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Hash;
-
 
 class UserService
 {
@@ -48,17 +44,8 @@ class UserService
         return response()->json($response, 200);
     }
 
-
-    public function login($request)
+    public function Notlogin()
     {
-        $input = $request;
-        $user = array_get($this->repository->skipPresenter()->findByField('email',$input['username']),'0');;
-
-        if(Hash::check($input['password'], $user->password)) {
-            $this->redirect("oauth/token");
-        }
-
-        return null;
+        return response()->json(['error'=>'Unautahorised'], 401);
     }
-
 }

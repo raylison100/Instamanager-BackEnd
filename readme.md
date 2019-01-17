@@ -8,3 +8,4 @@ Requesitos:
  -  league/fractal
  -  laravel/passport
  -  cosenary/instagram
+ -  laravel-cors
