@@ -28,24 +28,14 @@ class UserService
         $skipPresenter ? $this->repository->skipPresenter()->create($input) : $this->repository->create($input);
         $user = $this->repository->skipPresenter()->findByField('email',$input['email']);
         $user = array_get($user,'0');
-        $success['token'] =  $user->createToken('MyApp')->accessToken;
-        $success['name'] =  $user->name;
+        $data['token'] =  $user->createToken('MyApp')->accessToken;
+        $data['name'] =  $user->name;
 
-        return $this->sendResponse($success, 'User register successfully.');
-    }
-
-    public function sendResponse($result, $message)
-    {
-        $response = [
-            'success' => true,
-            'data' => $result,
-            'message' => $message,
-        ];
-        return response()->json($response, 200);
+        return $this->sendResponse($data, 'User register successfully.');
     }
 
     public function Notlogin()
     {
-        return response()->json(['error'=>'Unautahorised'], 401);
+        return $this->sendErro('Unautahorised',401);
     }
 }

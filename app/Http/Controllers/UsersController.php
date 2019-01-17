@@ -55,9 +55,8 @@ class UsersController extends Controller
         }
     }
 
-    public function login(Request $request){
-
-        return $this->service->login($request->all());
+    public function Notlogin(){
+        return $this->service->Notlogin();
     }
 
 

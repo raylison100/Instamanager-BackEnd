@@ -96,4 +96,23 @@ trait CrudMethods
         $this->repository->restore($id);
         return ['error' => false];
     }
+
+    public function sendResponse($data, $message)
+    {
+        $response = [
+            'success' => true,
+            'data' => $data,
+            'message' => $message,
+        ];
+        return response()->json($response, 200);
+    }
+
+    public function sendErro($message,$code)
+    {
+        $response = [
+            'success' => false,
+            'message' => $message,
+        ];
+        return response()->json($response, $code);
+    }
 }
