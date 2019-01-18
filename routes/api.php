@@ -26,7 +26,7 @@ Route::group([
 
         //Rotas Usuario
         Route::get('logout','UsersController@logout')->name('logout')->middleware('scope:administrador,usuario');
-        Route::get('lista','UsersController@index')->middleware('scope:administrador');
+            Route::get('lista','UsersController@index')->middleware('scope:administrador');
         Route::put('atualizarUser/{id}','UsersController@update')->middleware('scope:administrador,usuario');
 
 
