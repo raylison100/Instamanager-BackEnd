@@ -33,6 +33,7 @@ class UserTransformer extends TransformerAbstract
             'email'         => $model->email,
             'password'      => $model->password,
             'contaInsta_id' => $model->contaInsta_id,
+            'scope'         => $model->scope,
             'created_at'    => $model->created_at->toDateTimeString(),
             'updated_at'    => $model->updated_at->toDateTimeString()
         ];

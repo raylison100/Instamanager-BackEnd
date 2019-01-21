@@ -28,7 +28,7 @@ class UserService
         $skipPresenter ? $this->repository->skipPresenter()->create($input) : $this->repository->create($input);
         $user = $this->repository->skipPresenter()->findByField('email',$input['email']);
         $user = array_get($user,'0');
-        $data['token'] =  $user->createToken('MyApp')->accessToken;
+        $data['token'] =  $user->createToken('password', [$user['scope']])->accessToken;
         $data['name'] =  $user->name;
 
         return $this->sendResponse($data, 'User register successfully.');

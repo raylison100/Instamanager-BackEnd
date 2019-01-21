@@ -20,14 +20,16 @@ class UserValidator extends LaravelValidator
 
     protected $rules = [
         ValidatorInterface::RULE_CREATE => [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
+            'name'          => 'required',
+            'email'         => 'required|email',
+            'password'      => 'required',
             'contaInsta_id' => 'nullable|unique:insta_contas,id',
+            'scope'         => 'required'
         ],
         ValidatorInterface::RULE_UPDATE => [
             'name'          => 'sometimes|required|max:30',
             'password'      => 'sometimes|required|max:30',
+            'scope'         => 'sometimes|required',
             'contaInsta_id' => 'nullable|unique:insta_contas,id',
         ],
     ];
