@@ -8,7 +8,7 @@
 
 namespace App\Repositories;
 
-use App\User;
+use App\Entities\User;
 use App\Presenters\UserPresenter;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
