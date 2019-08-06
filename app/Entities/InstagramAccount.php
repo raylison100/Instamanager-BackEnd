@@ -7,11 +7,11 @@ use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class InstaConta.
+ * Class InstagramAccount.
  *
  * @package namespace App\Entities;
  */
-class InstaConta extends Model implements Transformable
+class InstagramAccount extends Model implements Transformable
 {
     use TransformableTrait;
 
@@ -23,12 +23,12 @@ class InstaConta extends Model implements Transformable
     protected $fillable = [
         'name',
         'password',
+        'likes',
+        'followers',
+        'comments',
         'apiKey',
         'apiSecret',
         'apiCallback',
-        'curtidasQTD',
-        'seguidoresQTD',
-        'comentariosQTD'
     ];
 
     protected $hidden = [

@@ -3,7 +3,7 @@
 namespace App\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use App\Entities\InstaConta;
+use App\Entities\InstagramAccount;
 
 /**
  * Class InstaContaTransformer.
@@ -13,13 +13,13 @@ use App\Entities\InstaConta;
 class InstaContaTransformer extends TransformerAbstract
 {
     /**
-     * Transform the InstaConta entity.
+     * Transform the InstagramAccount entity.
      *
-     * @param \App\Entities\InstaConta $model
+     * @param \App\Entities\InstagramAccount $model
      *
      * @return array
      */
-    public function transform(InstaConta $model)
+    public function transform(InstagramAccount $model)
     {
         return [
             'id'                => (int) $model->id,

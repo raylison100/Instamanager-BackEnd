@@ -19,7 +19,7 @@ use App\Entities\User;
 class UserTransformer extends TransformerAbstract
 {
     /**
-     * Transform the InstaConta entity.
+     * Transform the InstagramAccount entity.
      *
      * @param \App\Entities\User $model
      *

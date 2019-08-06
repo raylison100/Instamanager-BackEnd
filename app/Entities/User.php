@@ -14,6 +14,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, Notifiable,TransformableTrait;
 
+    const ADMIN  = 1;
+    const COMMON = 2;
+    const SUBSCRIBER = 3;
+
     protected $table = 'users';
 
     /**
@@ -21,13 +25,15 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
+    protected $fillable = array(
         'name',
         'email',
         'password',
-        'contaInsta_id',
-        'scope'
-    ];
+        'instagram_account_id',
+        'scope',
+        'active',
+        'activation_token'
+    );
 
     /**
      * The attributes that should be hidden for arrays.
@@ -37,16 +43,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'activation_token'
     ];
 
     protected $dates = [
         'created_at',
-        'updated_at'
+        'updated_at',
+        'deleted_at'
     ];
 
-    public function instaConta()
+    public function instagramAccount()
     {
-        return $this->hasOne('App\Entities\InstaConta');
+        return $this->hasOne('App\Entities\InstagramAccount');
     }
 
 }

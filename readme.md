@@ -1,11 +1,9 @@
-#InstaManager
+# Instamanager-BackEnd
 
-API de gerenciamento do Instagram
+Dependencias:
 
-Requesitos:
+league/fractal      -> composer require league/fractal
+l5-repository       -> composer require prettus/l5-repository
+Instagram-PHP-API   -> composer require cosenary/instagram
+passport            -> composer require laravel/passport
 
- -  prettus/l5-repository
- -  league/fractal
- -  laravel/passport
- -  cosenary/instagram
- -  laravel-cors

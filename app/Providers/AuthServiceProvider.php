@@ -30,9 +30,9 @@ class AuthServiceProvider extends ServiceProvider
         Passport::tokensExpireIn(now()->addDays(15));
         Passport::refreshTokensExpireIn(now()->addDays(30));
         Passport::tokensCan([
-            'usuario'           =>  'Usuario Comun',
-            'administrador'     =>  'Administrador do Sistema',
-            'assinante'         =>  'Usuario assinante'
+            'user'           =>  'User Common',
+            'administrator'     =>  'System Administrator',
+            'subscriber'         =>  'Subscriber User'
         ]);
     }
 }

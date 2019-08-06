@@ -5,7 +5,7 @@ namespace App\Repositories;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\InstaContaRepository;
-use App\Entities\InstaConta;
+use App\Entities\InstagramAccount;
 use App\Validators\InstaContaValidator;
 
 /**
@@ -22,7 +22,7 @@ class InstaContaRepositoryEloquent extends BaseRepository implements InstaContaR
      */
     public function model()
     {
-        return InstaConta::class;
+        return InstagramAccount::class;
     }
 
     /**
@@ -44,5 +44,5 @@ class InstaContaRepositoryEloquent extends BaseRepository implements InstaContaR
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
+
 }
