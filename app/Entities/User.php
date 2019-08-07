@@ -28,11 +28,8 @@ class User extends Authenticatable
     protected $fillable = array(
         'name',
         'email',
-        'password',
         'instagram_account_id',
         'scope',
-        'active',
-        'activation_token'
     );
 
     /**

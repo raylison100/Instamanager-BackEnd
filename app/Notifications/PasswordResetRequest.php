@@ -38,8 +38,8 @@ class PasswordResetRequest extends Notification
      */
     public function toMail($notifiable)
     {
-//        $url = url('/api/instamanager/password/find/'.$this->token);
-        $url = url('http://localhost:4200/password/reset/'.$this->token);
+        $url = url('/api/apiInstaManager/password/find/'.$this->token);
+//        $url = url('http://localhost:4200/password/reset/'.$this->token);
         return (new MailMessage)
             ->line('You are receiving this email because we        received a password reset request for your account.')
             ->action('Reset Password', url($url))

@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email',100)->unique();
             $table->string('password');
-            $table->string('scope');
+            $table->integer('scope');
             $table->rememberToken();
             $table->integer('instagram_account_id')->unsigned()->nullable();
             $table->foreign('instagram_account_id')

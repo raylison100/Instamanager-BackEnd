@@ -18,7 +18,7 @@ class UserCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,7 +29,18 @@ class UserCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'       => 'required|max:30',
+            'email'      => 'required|email|unique:users,email',
+            'password'   => 'required|max:15|min:8'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'required' => 'The field: :attribute is required!',
+            'max'      => 'Maximum size exceeded for: :attribute ',
+            'min'      => 'required minimum size for: :attribute ',
+            'email'    => 'Email not allowed'
         ];
     }
 }

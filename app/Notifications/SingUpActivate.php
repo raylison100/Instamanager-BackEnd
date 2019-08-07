@@ -38,7 +38,7 @@ class SingUpActivate extends Notification
      */
     public function toMail($notifiable)
     {
-        $url = url('/api/instamanager/activate/'.$notifiable->activation_token);
+        $url = url('/api/apiInstaManager/activate/'.$notifiable->activation_token);
 //        $url = url('http://localhost:4200/register/confirm/'.$notifiable->activation_token);
         return (new MailMessage)
             ->subject('Confirm your account')

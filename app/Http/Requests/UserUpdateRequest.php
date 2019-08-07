@@ -18,7 +18,7 @@ class UserUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,7 +29,17 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'       => 'max:30',
+            'email'      => 'email|unique:users,email',
+            'password'   => 'max:15|min:8'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'max'      => 'Maximum size exceeded for: :attribute ',
+            'min'      => 'required minimum size for: :attribute ',
+            'email'    => 'Email not allowed'
         ];
     }
 }
